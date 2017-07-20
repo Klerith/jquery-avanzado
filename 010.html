@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+    <style media="screen">
+
+      .menu{
+        position:fixed;
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+      }
+
+    </style>
+
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      $( function(){
+
+        $(document).on('contextmenu',function(e){
+
+          e.preventDefault();
+          console.log( e.offsetX, e.offsetY );
+
+          $('.menu').remove();
+
+          let div = $('<div>',{
+            'class':'menu',
+            'css':{
+              'top': e.offsetY,
+              'left': e.offsetX
+            },
+            'animate':{
+              'width': '100',
+              'height': '300'
+            }
+          });
+
+          div.appendTo('body');
+
+
+        });
+
+      });
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Evento DOM listo</h1>
+    <p>
+      Normalmente, desearemos manipular el DOM (Document Object Model), cuando la página este lista y completamente creada.
+    </p>
+
+
+
+
+
+    <!-- Librería de jQuery -->
+    <!-- <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script> -->
+    <script>
+
+      // $( document ).ready( pagina_lista() );
+      // $( pagina_lista()  );
+
+      // document.addEventListener( 'DOMContentLoaded', pagina_lista(), false );
+
+      r(  pagina_lista  );
+
+      function r( f ){
+        /in/.test( document.readyState )?setTimeout('r('+f+')',10):f()
+      }
+
+
+      function pagina_lista(){
+        console.log("Página cargada");
+      }
+
+
+    </script>
+
+  </body>
+</html>

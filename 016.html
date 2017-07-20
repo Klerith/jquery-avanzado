@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+    <div id="elem"></div>
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      var inicio = new Date();
+
+
+      var $elem = $("#elem"),
+          arr = [];
+      // for( var i=0; i <= 1000; i++ ){
+      //   $elem.append('<li>Elemento '+ i +'</li>');
+      // }
+
+      for( var i=0; i <= 1000; i++ ){
+        arr.push('<li>Elemento '+ i +'</li>');
+      }
+
+      $elem.append( arr.join('') );
+
+
+
+
+      var fin = new Date();
+
+      // Resultados
+      console.log("Inicio: ", inicio.getTime());
+      console.log("Fin: ", fin.getTime());
+      console.log("Diff: ", fin.getTime() - inicio.getTime()  );
+    </script>
+
+  </body>
+</html>

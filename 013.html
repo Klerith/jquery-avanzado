@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+
+    <div id="divEditable">
+      <h1>Algún texto</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+      </p>
+    </div>
+
+    <button type="button" class="btn btn-primary">Guardar</button>
+
+
+    <style id="divEstilo">
+
+      html{
+        background-color: red;
+        position: relative;
+      }
+
+      body{
+        font-size: 20px;
+        color: blue;
+      }
+
+    </style>
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      // $("h1, p").attr("contentEditable",true);
+      $("#divEditable").attr("contentEditable",true);
+
+      $("button").on('click',function(){
+
+        let contenido = $("#divEditable").html();
+        console.log(contenido);
+
+      });
+
+      // $("#divEstilo").css({ 'display':'block', 'white-space':'pre' })
+      //                .attr("contentEditable",true);
+
+    </script>
+
+  </body>
+</html>
