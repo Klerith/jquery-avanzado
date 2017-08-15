@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+    <div id="elem" style="background:blue"></div>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      var i= 0, iteraciones = 1000;
+      var elem = $('#elem');
+
+      console.time('enlazado dom');
+
+      for( i=0; i<iteraciones; i++ ){
+
+        elem.width( Math.round( Math.random()*100 ) );
+        elem.height( Math.round( Math.random()*100 ) );
+
+      }
+
+      console.timeEnd('enlazado dom');
+
+
+      console.time('separado');
+      var parent = elem.parent();
+      elem.detach();
+
+      for( i=0; i<iteraciones; i++ ){
+
+        elem.width( Math.round( Math.random()*100 ) );
+        elem.height( Math.round( Math.random()*100 ) );
+
+      }
+
+      elem.appendTo( parent );
+
+      console.timeEnd('separado');
+
+
+    </script>
+
+  </body>
+</html>
