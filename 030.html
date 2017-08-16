@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+
+
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+    <div id="holder">
+      <button type="button" id="boton1">1</button>
+      <button type="button" id="boton2">2</button>
+      <button type="button" id="boton3">3</button>
+      <button type="button" id="boton4">4</button>
+      <button type="button" id="boton5" style="float:right;">Limpiar</button>
+    </div>
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      var boton1 = $("#boton1"),
+          boton2 = $("#boton2"),
+          boton3 = $("#boton3"),
+          boton4 = $("#boton4"),
+          boton5 = $("#boton5");
+
+
+      boton1.on('click',function(){
+        console.log("click");
+      });
+
+      boton2.on('mouseenter.temp mouseleave',function(){
+        console.log("Entro mouse / Salio mouse");
+      });
+
+      boton3.on('click', Math.round(Math.random()*20), function( e ){
+        console.log("El número random es: ", e.data );
+      });
+
+      boton4.on('click.temp',function(){
+        console.log("Temp disparado!");
+      });
+
+
+      boton5.on('click',function(){
+        console.clear();
+        $('button').off('.temp');
+        console.log("Eventos de los botones TEMP han sido eliminados");
+      });
+
+
+    </script>
+
+
+
+  </body>
+</html>

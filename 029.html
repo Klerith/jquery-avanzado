@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+    <style>
+
+      #ball{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border-radius: 100%;
+        background-color: red;
+      }
+
+    </style>
+
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+      var ball = $('<div id="ball"></div>').appendTo('body');
+
+      var startPosition = {};
+      var elementPosition = {};
+
+      ball.on('mousedown touchstart',function(e){
+
+        e.preventDefault();
+
+        e = ( e.originalEvent.touches ) ? e.originalEvent.touches[0] : e;
+
+        startPosition = {
+          x: e.pageX,
+          y: e.pageY
+        };
+
+        elementPosition = {
+          x: ball.offset().left,
+          y: ball.offset().top
+        };
+
+
+        ball.on('mousemove.rem touchmove.rem',function( e ){
+
+          e = ( e.originalEvent.touches ) ? e.originalEvent.touches[0] : e;
+
+          ball.css({
+            top: elementPosition.y + ( e.pageY - startPosition.y ),
+            left: elementPosition.x + ( e.pageX - startPosition.x ),
+          });
+
+        });
+
+
+      });
+
+
+      ball.on('mouseup touched', function(){
+        ball.off('.rem');
+      })
+
+
+
+    </script>
+
+
+
+  </body>
+</html>

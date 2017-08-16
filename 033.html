@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+
+
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+    <button type="button" id="btn1">Saltar</button>
+    <button type="button" id="btn2">Golpear</button>
+    <button type="button" id="btn3">Click</button>
+
+    <div id="contenedor"></div>
+
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+
+      var boton1 = $("#btn1"),
+          boton2 = $("#btn2"),
+          boton3 = $("#btn3");
+
+     var div = $("#contenedor");
+
+     div.on({
+
+       saltar: function(){
+         console.log("Saltar!");
+       },
+
+       golpear: function( e, data ){
+         console.log("Golpeando " + data + "!");
+       },
+
+       click: function(){
+         console.log("Simulando un click");
+       }
+
+     });
+
+
+     boton1.click( function(){
+
+       div.trigger('saltar');
+
+     });
+
+     boton2.click( function(){
+
+       div.trigger('golpear', ['muy fuerte']);
+
+     });
+
+     boton3.click( function(){
+
+       div.trigger('click');
+
+     });
+
+
+    </script>
+
+
+
+  </body>
+</html>
