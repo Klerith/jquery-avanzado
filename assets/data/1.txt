@@ -1,0 +1,1 @@
+Este es un texto random del archivo 1.txt

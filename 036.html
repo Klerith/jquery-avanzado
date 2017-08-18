@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+
+
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+
+      $.when(  $.get('assets/data/1.json'), $.get('assets/data/2.json') )
+       .then( function( r1, r2 ){
+
+         r1 = r1[0];
+         r2 = r2[0];
+
+         var mensaje = r1.mensaje + " " + r2.nombre + " " + r2.edad;
+         console.log(mensaje);
+
+
+       }).catch(function(err){
+         console.log("error!!!!");
+       })
+
+
+
+    </script>
+
+
+
+  </body>
+</html>
