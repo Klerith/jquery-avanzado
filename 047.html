@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+
+      console.log("Hola de nuevo");
+
+      // ----
+      var a = 'buenos', b = 'días';
+      console.log("Hola, %s %s.", a, b);
+
+      // ---
+      console.dir( window );
+
+      //
+      console.info('Información');
+      console.warn('Alerta');
+      console.error('oops, algo malo paso');
+
+      //
+
+      for( var i = 0; i <10; i++ ){
+        console.count('Vamos por')
+      }
+
+      //
+      console.group('Function main');
+      console.log('Vamos en camino');
+      console.info('En camino');
+      console.warn('Estamos llegando');
+      console.error('Chocamos...');
+      console.groupEnd();
+
+
+      //
+      console.time('Medir el tiempo de este ciclo');
+      var numero=0;
+      for( var i =0; i <100000; i++ ){
+        numero+=10;
+      }
+      console.timeEnd('Medir el tiempo de este ciclo');
+
+
+    </script>
+
+
+
+  </body>
+</html>

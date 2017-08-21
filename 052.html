@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+    <ul>
+      <li><input type="checkbox" value="lunes" class="dia" checked> lunes</li>
+      <li><input type="checkbox" value="martes" class="dia" checked> Martes</li>
+      <li><input type="checkbox" value="miercoles" class="dia" checked> Miercoles</li>
+      <li><input type="checkbox" value="jueves" class="dia" checked> Jueves</li>
+      <li><input type="checkbox" value="viernes" class="dia"> Viernes</li>
+      <li><input type="checkbox" value="sabado " class="dia"> Sabado </li>
+      <li><input type="checkbox" value="domingo" class="dia"> Domingo</li>
+    </ul>
+
+    <p id="dias-laborales">
+
+    </p>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+    var checkboxes = $('.dia'),
+        mensaje = $('#dias-laborales');
+
+    function callback(){
+
+      var dias = checkboxes.filter(':checked').map( function(){
+        return $(this).val();
+      }).get();
+
+      console.log(dias);
+
+      mensaje.text('He seleccionado: ' + dias.join(', '));
+
+    }
+
+    checkboxes.on('click', callback );
+
+    callback();
+
+
+
+    </script>
+
+
+
+  </body>
+</html>

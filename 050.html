@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+<!--
+    <div id="small-top-left-container">
+
+      <div class="small-box">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="assets/img/ball.png">
+          </div>
+          <div class="col-md-8">
+            <h4>Algún Titulo</h4>
+            <p>
+              Esta es una descripción cualquiera
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  -->
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="assets/libs/small-notification.js" charset="utf-8"></script>
+    <script>
+
+      $(document).ready(function(){
+
+        var opciones = {
+          titulo: 'Nuevo Titulo',
+          img: 'assets/img/Katy_Perry.jpg',
+          contenido: 'Cualquier cosa es buena para mostrar contenido'
+        };
+
+        $.smallBox( opciones );
+
+      });
+
+
+    </script>
+
+
+
+  </body>
+</html>

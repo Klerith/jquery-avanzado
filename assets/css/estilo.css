@@ -1,3 +1,25 @@
 body{
   margin: 30px;
 }
+
+
+#preloader{
+  display: none;
+}
+
+#small-top-left-container{
+  position: fixed;
+  top: 20px;
+  right: 0px;
+}
+.small-box{
+  width: 250px;
+  background-color: #490460;
+  color: white !important;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.small-box img{
+  width: 60px;
+}
