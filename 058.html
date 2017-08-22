@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+
+
+
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+    <button id="btn1">1</button>
+    <button id="btn2">2</button>
+
+    <input type="checkbox" id="checkBox" checked />
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+    var cb =$.Callbacks();
+    console.log( cb );
+
+    cb.add( function(mensaje){
+        console.log(mensaje);
+    });
+
+    cb.add( function(){
+        console.log('-----');
+    });
+
+
+    $("#btn1").on('click',function(){
+
+      cb.fire('Linea 1');
+      cb.fire('Linea 2');
+      cb.fire('Linea 3');
+
+    });
+
+
+    var cbFlag = $.Callbacks('stopOnFalse');
+
+    cbFlag.add(function(){
+      console.log( $("#checkBox").is(':checked') );
+      return $("#checkBox").is(':checked');
+    });
+
+    cbFlag.add(function(){
+      console.log('El checkbox esta seleccionado!');
+    });
+
+    $("#btn2").on('click', cbFlag.fire );
+
+
+    </script>
+
+
+
+  </body>
+</html>
