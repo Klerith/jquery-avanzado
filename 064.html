@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+
+
+  </head>
+  <body>
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+    <input id="input1" style="width:60px;" type="text" />
+    <input id="input2" style="width:60px;" type="text" />
+    <input id="input3" style="width:60px;" type="text" />
+
+    <p class="lipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    <p class="lipsum">Aenean dapibus turpis ut justo congue id sodales mi dignissim.</p>
+
+    <p class="lipsum">In sed lorem elit, sit amet mollis enim. Integer at feugiat</p>
+
+    <p class="lipsum">Integer dignissim, neque eu varius dignissim, risus lacus accum</p>
+
+    <p class="lipsum">Proin tempus.</p>
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+    $('input[type=text]').val( function(){
+        return this.id;
+    });
+
+    var p = $('.lipsum');
+
+    p.filter(  function(){
+        return $(this).text().match(/lorem/i) !=null;
+    }).hide();
+
+    p = p.filter(':visible');
+
+    p.prepend( function(index){
+
+      return ( index + 1 ) + ") ";
+
+    });
+
+
+    p.css( 'color', function(index){
+
+      return index%2 == 1 ? 'blue':'green';
+
+    });
+
+    p.html( function(){
+
+      var contenido = $(this).text();
+
+      if( contenido.length > 40 ){
+        return contenido.slice(0,40) + "...";
+      }
+
+    });
+
+
+    console.log( 'El primer parrafo en verde?',  p.eq(2).is( function(){
+
+      return $(this).css('color').match(/green|rgb\(0, 128, 0\)|#00FF00/i);
+
+    }));
+
+
+    </script>
+
+
+
+  </body>
+</html>

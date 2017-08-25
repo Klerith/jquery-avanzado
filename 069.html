@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+
+  </head>
+  <body>
+
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+
+
+    <!-- Librería de jQuery -->
+    <!-- <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
+
+    <script>
+
+    var arr = [53, 5, 6, 7, 6, 13, 77, -23, 55, 404, 2];
+
+
+    console.log('Número pares:', _.filter( arr, function(num){ return num % 2 == 0; }  ) );
+    console.log('Existe num 13:', _.contains( arr, 13 ));
+    console.log('Max:', _.max(arr)   );
+    console.log('Max:', arr.sort( function(a, b){  return a-b  })   );
+    console.log('Orden random:', _.shuffle(arr) );
+    console.log('Unicos:', _.unique(arr) );
+
+    console.log('-------');
+    var obj = {
+      nombre: "Fernando Herrera",
+      edad: 30,
+      peso: '150lb',
+      colorOjos: 'negro'
+    };
+
+    console.log('Llaves', _.keys(obj) );
+    console.log('Valores', _.values(obj) );
+    console.log('Pick', _.pick(obj, 'edad', 'peso') );
+    console.log('Cuantos', _.size(obj) );
+
+
+
+    </script>
+
+
+
+  </body>
+</html>

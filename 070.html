@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+
+  </head>
+  <body>
+
+
+
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/es.js" charset="utf-8"></script>
+    <script>
+
+    var hoy = moment();
+    console.log( hoy.format('HH:mm:ss') );
+
+    var miCumple = moment([1985, 9, 1]);
+    console.log('El mes es: ',  miCumple.format('MMMM') );
+
+
+    var diaSemana = moment().day();
+    console.log('Dia de la semana:', moment.weekdays()[diaSemana]  );
+
+    var mes = moment().month();
+    console.log('El mes es:', moment.months()[mes]  );
+
+    console.log('La hora en Londres es:', moment.utc().format('HH:mm:ss')  );
+    console.log('La hora en Japón es:', moment.utc().add(9,'hours').format('HH:mm:ss')  );
+
+    console.log('El próximo mundial falta:',
+                moment('Junio 14, 2018','MMM DDYYYY').fromNow()
+              );
+
+    console.log('Que fecha será dentro de 7 días',
+              moment().add(7, 'days').format('MMMM Do, YYYY')
+            );
+
+    var desayuno = moment('08:00', 'HH:mm');
+    var almuerzo = moment('12:31', 'HH:mm');
+
+    console.log( moment.duration( almuerzo - desayuno ).humanize() + ' horas de trabajo entre almuerzo y desayuno' );
+
+
+    </script>
+
+
+
+  </body>
+</html>
