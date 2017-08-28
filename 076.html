@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <style media="screen">
+
+     #caja-azul{
+       width: 100px;
+       height: 100px;
+       background-color: blue;
+     }
+
+    </style>
+
+
+  </head>
+  <body>
+
+
+
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+    <div id="caja-azul"></div>
+
+    <button type="button">Animar</button>
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script>
+
+    var cajaAzul = $('#caja-azul');
+
+    $.fn.extend({
+        animateCss: function (animationName) {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            this.addClass('animated ' + animationName).one(animationEnd, function() {
+                $(this).removeClass('animated ' + animationName);
+            });
+            return this;
+        }
+    });
+
+
+
+
+    $('button').click(function(){
+
+      cajaAzul.animateCss('bounce fast');
+
+    });
+
+
+    </script>
+
+
+
+  </body>
+</html>

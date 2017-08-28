@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+
+    <style media="screen">
+      #colores{
+        width: 150px;
+        height: 150px;
+      }
+    </style>
+
+
+
+  </head>
+  <body>
+
+
+
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+    <div id="colores"></div>
+    <button type="button">
+      Animar color
+    </button>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js" charset="utf-8"></script>
+    <script>
+
+
+    var c = $.Color('#4a1f81');
+    console.log("red", c.red() );
+    console.log("green", c.green() );
+    console.log("blue", c.blue() );
+
+    $('button').click(function(){
+
+      $("#colores").css('background-color','white')
+                  .animate({ 'background-color': 'blue' })
+                  .animate({ 'background-color': 'green' })
+                  .animate({ 'background-color': 'red' })
+                  .animate({ 'background-color': 'purple' }, 2000)
+                  .animate({ 'background-color': 'yellow' });
+
+    });
+
+
+
+    </script>
+
+
+
+  </body>
+</html>
