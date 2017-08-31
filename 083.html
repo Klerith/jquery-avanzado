@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <style media="screen">
+
+      .foto-container{
+        position: relative;
+        width: 600px;
+      }
+
+      .foto{
+        /*width: 100%;*/
+      }
+
+      .cara{
+        position: absolute;
+        border: 2px solid white;
+      }
+
+
+    </style>
+
+
+  </head>
+  <body>
+
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+    <div class="foto-container">
+      <img src="assets/img/foto.jpg" id="foto" class="foto">
+    </div>
+
+    <button type="button">Lozalizar Cara(s)</button>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="assets/libs/jquery.facedetection.min.js" charset="utf-8"></script>
+    <script>
+
+    $('button').click(function(){
+
+      $('#foto').faceDetection({
+              complete: function(caras) {
+                  // console.log(caras);
+                  for( var i = 0; i < caras.length; i++ ){
+                    var rostro = caras[i]
+                    console.log(rostro);
+
+                    $('<div>',{
+                      'class': 'cara',
+                      'css':{
+                        'left': rostro.x * rostro.scaleX + 'px',
+                        'top': rostro.y * rostro.scaleY + 'px',
+                        'width': rostro.width * rostro.scaleX + 'px',
+                        'height': rostro.height * rostro.scaleY + 'px'
+                      }
+                    }).insertAfter(this);
+
+                  }
+              }
+      });
+
+
+    })
+
+
+
+
+    </script>
+
+
+
+  </body>
+</html>

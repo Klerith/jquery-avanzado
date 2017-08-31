@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <style media="screen">
+
+      .tarjetas {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .tarjeta {
+        width: 200px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 8px;
+      }
+
+      .x1{
+        height: 100px;
+        background-color: rgb(17, 65, 66)
+      }
+
+      .x2{
+        height: 200px;
+        background-color: rgb(36, 13, 93)
+      }
+
+      .x3{
+        height: 300px;
+        background-color: rgb(72, 6, 75)
+      }
+
+      .x4{
+        height: 400px;
+        background-color: rgb(117, 48, 3)
+      }
+
+
+
+    </style>
+
+
+  </head>
+  <body>
+
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+    <div class="tarjetas">
+
+      <!-- <div class="tarjeta x4"></div> -->
+
+    </div>
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script>
+
+
+      var tarjetas = $('.tarjetas'),
+           arrElem = [];
+
+
+     for( var i = 0; i <= 1000; i++ ){
+
+       var random = Math.round( (Math.random() * 3) + 1);
+       var clase  = 'x'+random;
+
+       arrElem.push( '<div class="tarjeta '+ clase +'"></div>' );
+
+     }
+
+     tarjetas.append( arrElem.join('')  );
+
+
+     tarjetas.masonry({
+       itemSelector: '.tarjeta'
+     });
+
+
+    </script>
+
+
+
+  </body>
+</html>

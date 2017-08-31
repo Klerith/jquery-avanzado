@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+
+    <style media="screen">
+      #mapa{
+        background-color: red;
+        width: 100%;
+        height: 250px;
+      }
+    </style>
+
+
+  </head>
+  <body>
+
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+    <div id="mapa">
+
+    </div>
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="https://maps.google.com/maps/api/js?sensor=true" charset="utf-8"></script>
+    <script src="assets/libs/gmaps.min.js" charset="utf-8"></script>
+
+
+    <script>
+
+    var map = new GMaps({
+        div: '#mapa',
+        lat: -12.043333,
+        lng: -77.028333
+      });
+
+
+      map.addMarker({
+        lat: -12.043333,
+        lng: -77.028333,
+        title: 'Lima',
+        infoWindow: {
+          content: '<p>HTML Content</p>'
+        },
+        click: function(e) {
+          alert('You clicked in this marker');
+        }
+      });
+
+
+    </script>
+
+
+
+  </body>
+</html>
