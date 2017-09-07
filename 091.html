@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <style media="screen">
+      .help-block{
+        color:red;
+      }
+    </style>
+
+
+  </head>
+  <body>
+
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+    <form action="/registration" method="POST">
+
+      <div class="form-group">
+        <label class="control-label" for="the-input">Input description</label>
+        <input type="text" id="the-input" class="form-control" data-validation="required" />
+      </div>
+
+
+      <p>
+        User name (4 characters minimum, only alphanumeric characters):
+        <input data-validation="length alphanumeric" data-validation-length="min4">
+      </p>
+      <p>
+        Year (yyyy-mm-dd):
+        <input data-validation="date" data-validation-format="dd-mm-yyyy">
+      </p>
+      <p>
+        Website:
+        <input data-validation="url"
+               data-validation-error-msg="El url necesita http o https">
+      </p>
+      <p>
+        <input type="submit">
+      </p>
+    </form>
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.77/jquery.form-validator.min.js" charset="utf-8"></script>
+    <script>
+
+
+    $.validate({
+        lang: 'es',
+        borderColorOnError : 'none'
+      });
+
+
+
+    </script>
+
+
+
+  </body>
+</html>
