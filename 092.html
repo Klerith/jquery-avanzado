@@ -6,11 +6,14 @@
 
     <!-- Estilo del Boostrap 4 -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/libs/twentytwenty/css/twentytwenty.css">
 
     <style media="screen">
-      .help-block{
-        color:red;
-      }
+
+    .twentytwenty-container{
+      width: 400px;
+    }
+
     </style>
 
 
@@ -23,45 +26,21 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
     </p>
 
-    <form action="/registration" method="POST">
-
-      <div class="form-group">
-        <label class="control-label" for="the-input">Input description</label>
-        <input type="text" id="the-input" class="form-control" data-validation="required" />
-      </div>
-
-
-      <p>
-        User name (4 characters minimum, only alphanumeric characters):
-        <input data-validation="length alphanumeric" data-validation-length="min4">
-      </p>
-      <p>
-        Year (yyyy-mm-dd):
-        <input data-validation="date" data-validation-format="dd-mm-yyyy">
-      </p>
-      <p>
-        Website:
-        <input data-validation="url"
-               data-validation-error-msg="El url necesita http o https">
-      </p>
-      <p>
-        <input type="submit">
-      </p>
-    </form>
-
+    <div class="twentytwenty-container">
+      <img src="assets/img/1_1.jpg" />
+      <img src="assets/img/1_2.jpg" />
+    </div>
 
 
     <!-- Librería de jQuery -->
     <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.77/jquery.form-validator.min.js" charset="utf-8"></script>
+    <script src="assets/libs/twentytwenty/js/jquery.twentytwenty.js" charset="utf-8"></script>
+    <script src="assets/libs/twentytwenty/js/jquery.event.move.js" charset="utf-8"></script>
     <script>
 
-
-    $.validate({
-        lang: 'es',
-        borderColorOnError : 'none'
-      });
-
+    $('.twentytwenty-container').twentytwenty({
+      default_offset_pct: 0.8
+    });
 
 
     </script>

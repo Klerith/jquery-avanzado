@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/libs/twentytwenty/css/twentytwenty.css">
+
+
+
+  </head>
+  <body>
+
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+    <select id="filtros" class="form-control">
+      <option>Seleccione el filtro</option>
+      <option value="vintage">Vintage</option>
+      <option value="lomo">Lomo</option>
+      <option value="clarity">Clarity</option>
+      <option value="sinCity">Sin City</option>
+      <option value="sunrise">Sunrise</option>
+      <option value="crossProcess">Cross Process</option>
+      <option value="orangePeel">Orange Peel</option>
+      <option value="love">Love</option>
+      <option value="grungy">Grungy</option>
+      <option value="jarques">Jarques</option>
+      <option value="pinhole">Pinhole</option>
+      <option value="oldBoot">Old Boot</option>
+      <option value="glowingSun">Glowing Sun</option>
+      <option value="hazyDays">Hazy Days</option>
+      <option value="herMajesty">Her Majesty</option>
+      <option value="nostalgia">Nostalgia</option>
+      <option value="hemingway">Hemingway</option>
+      <option value="concentrate">Concentrate</option>
+  </select>
+
+
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="assets/libs/caman.full.pack.js" charset="utf-8"></script>
+
+    <script>
+
+    var dropdown = $("#filtros"),
+        canvas = $();
+
+
+    dropdown.on('change', function(){
+
+      var tmp = $('<canvas>').insertAfter( dropdown ).hide();
+      var filtro = this.value;
+
+      Caman( tmp[0], 'assets/img/Katy_Perry.jpg',function(){
+
+          canvas.remove();
+          canvas = tmp.show();
+
+          if( filtro in this ){
+            this[filtro]().render();
+          }
+
+      });
+
+
+
+
+    });
+
+
+    dropdown.trigger('change');
+
+    </script>
+
+
+
+  </body>
+</html>

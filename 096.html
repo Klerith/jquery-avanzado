@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+
+  </head>
+  <body>
+
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+    <div id="my_camera"></div>
+
+    <button type="button" class="btn btn-outline-primary">
+      Tomar foto
+    </button>
+
+    <div id="resultados"></div>
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="assets/libs/webcam.min.js" charset="utf-8"></script>
+    <script>
+
+    Webcam.set({
+			width: 320,
+			height: 240,
+			image_format: 'jpeg',
+			jpeg_quality: 90
+		});
+		Webcam.attach( '#my_camera' );
+
+
+    $('button').click(function(){
+
+      Webcam.snap( function(data_uri) {
+				// display results in page
+        $('#resultados').html(
+              '<h2>Here is your image:</h2>' +
+              '<img src="'+data_uri+'"/>' );
+
+
+          console.log(data_uri);
+			} );
+
+
+    });
+
+
+    </script>
+
+
+
+  </body>
+</html>
