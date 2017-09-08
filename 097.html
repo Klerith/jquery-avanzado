@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/libs/pickdate/themes/default.css">
+    <link rel="stylesheet" href="assets/libs/pickdate/themes/default.date.css">
+    <!-- <link rel="stylesheet" href="assets/libs/pickdate/themes/rtl.css"> -->
+
+
+  </head>
+  <body>
+
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+    <div class="container">
+      <input type="text" id="fecha" class="form-control">
+    </div>
+
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="assets/libs/pickdate/picker.js" charset="utf-8"></script>
+    <script src="assets/libs/pickdate/picker.date.js" charset="utf-8"></script>
+    <script src="assets/libs/pickdate/translations/es_ES.js" charset="utf-8"></script>
+
+    <script>
+
+    $('#fecha').pickadate({
+      min: new Date()
+    });
+
+    </script>
+
+
+
+  </body>
+</html>

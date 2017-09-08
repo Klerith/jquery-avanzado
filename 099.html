@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Estilo del Boostrap 4 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <style media="screen">
+
+      #rumble{
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+
+    </style>
+
+  </head>
+  <body class="container">
+
+
+    <h1>Algún texto</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+    </p>
+
+
+    <div id="rumble"></div>
+
+
+    <!-- Librería de jQuery -->
+    <script src="assets/libs/jquery-3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jrumble/1.3.0/jquery.jrumble.min.js" charset="utf-8"></script>
+    <script>
+
+    var elemento = $('.container').jrumble({
+      x: 10,
+      y: 10,
+      rotation: 4
+    });
+
+    elemento.trigger('startRumble');
+
+    setTimeout(function(){
+      elemento.trigger('stopRumble');
+    },2000)
+
+
+    </script>
+
+
+
+  </body>
+</html>
