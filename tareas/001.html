@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Avanzado</title>
+
+    <!-- Cambiar por un CDN del bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+
+  </head>
+  <body>
+
+    <h1 id="titulo">Algún texto</h1>
+    <p>
+      Parrafo #1
+    </p>
+
+
+
+
+    <!-- Librería de jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+    // Crear una referencia local al h1 con el id titulo
+    var titulo = $('#titulo');
+
+    // Usar la referencia local del titulo en lugar del selector
+    titulo.text('Ejercicio #1');
+
+    // Crear un evento para todos los botones, que al hacer click en él
+    // ejecute la impresión en consola de 'Hola Mundo'
+    // Sin usar el $(document).ready, ni tampoco alguna de sus diferentes formas
+    $(document).on('click','button',function(){
+      console.log('Hola Mundo');
+    });
+
+    // Cree 1000 botones que impriman Hola Mundo en consola reutilizando el código anterior.
+    // Debe de modificar el DOM una única vez
+    // Cada botón debe tener como etiqueta el número de 1 a 1000.
+    // Debe insertar los 1000 botones después del boton que se encuentra
+    // debajo de este script
+    var arr = [];
+
+    for(var i = 1; i <= 1000; i++){
+
+      var contenido = '<button type="button" class="btn btn-primary">'+i+'</button>';
+      arr.push( contenido );
+    }
+
+    // $('body').append( arr.join('')  );
+
+    $( function(){
+
+      $( arr.join('') ).insertAfter('button');
+
+    });
+
+
+    </script>
+
+
+    <button type="button" class="btn btn-primary">
+      Imprimir en consola 'Hola Mundo'
+    </button>
+
+
+  </body>
+</html>
